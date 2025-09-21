@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.pyc
@@ -21,3 +22,9 @@ yarn-error.log*
 
 # Elastic Beanstalk local files
 .elasticbeanstalk/
+=======
+venv/
+.env
+__pycache__/
+*.pyc
+>>>>>>> 64fa248c217d97e816b8680faa7b379b190dd6f3
