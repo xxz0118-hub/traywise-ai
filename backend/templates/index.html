@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Traywise — Upload</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <main class="container">
+    <h1>Traywise — Image Labeling</h1>
+
+    {% if error %}
+      <div class="alert alert-error">{{ error }}</div>
+    {% endif %}
+
+    <form class="card" action="/upload" method="post" enctype="multipart/form-data">
+      <label class="file-label">
+        <span>Select an image (jpg, jpeg, png, bmp, tiff, webp)</span>
+        <input type="file" name="image" accept="image/*" required />
+      </label>
+      <button type="submit">Upload & Analyze</button>
+    </form>
+
+    {% if labels %}
+      <div class="card">
+        <h2>Detected labels</h2>
+        <ul>
+          {% for item in labels %}
+            <li><strong>{{ item.name }}</strong> — {{ item.confidence }}%</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if presigned_url %}
+      <div class="card">
+        <h2>Results JSON</h2>
+        <p><a href="{{ presigned_url }}" target="_blank" rel="noopener">Open results</a></p>
+      </div>
+    {% endif %}
+  </main>
+</body>
+</html>
