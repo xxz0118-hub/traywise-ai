@@ -1,0 +1,138 @@
+/* Ameru.ai exact color palette */
+:root {
+  --glow-cyan: #5AF3F2;
+  --glow-green: #54FB82;
+  --dark-green: #084229;
+  --very-dark: #090F12;
+  --dark-blue-gray: #141C28;
+  --dark-green-black: #080D0C;
+  --dark-blue: #0F1F31;
+  --pure-white: #FFFFFF;
+  --border-glow: #5AF3F2;
+}
+
+.glow-text {
+  color: var(--glow-cyan);
+  text-shadow: 0 0 10px var(--glow-cyan), 0 0 20px var(--glow-cyan), 0 0 30px var(--glow-cyan);
+}
+
+.glow-border {
+  border: 1px solid var(--glow-cyan);
+  box-shadow: 
+    0 0 5px var(--glow-cyan),
+    inset 0 0 5px var(--glow-cyan)/20;
+}
+
+.glow-button {
+  background: linear-gradient(135deg, var(--glow-cyan)/10, var(--glow-green)/10);
+  border: 1px solid var(--glow-cyan);
+  box-shadow: 
+    0 0 10px var(--glow-cyan)/50,
+    inset 0 0 10px var(--glow-cyan)/20;
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  background: linear-gradient(135deg, var(--glow-cyan)/20, var(--glow-green)/20);
+  box-shadow: 
+    0 0 20px var(--glow-cyan)/70,
+    inset 0 0 15px var(--glow-cyan)/30;
+  transform: translateY(-2px);
+}
+
+.futuristic-panel {
+  background: linear-gradient(135deg, 
+    rgba(15, 31, 49, 0.9), 
+    rgba(20, 28, 40, 0.8)
+  );
+  border: 1px solid var(--border-glow);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(9, 15, 18, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.futuristic-panel.glow {
+  border-color: var(--glow-cyan);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 15px var(--glow-cyan)/30,
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.scanning-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanning-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--glow-cyan)/20,
+    transparent
+  );
+  animation: scan 2s infinite;
+}
+
+@keyframes scan {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px var(--glow-cyan), 0 0 10px var(--glow-cyan), 0 0 15px var(--glow-cyan);
+  }
+  50% { 
+    box-shadow: 0 0 10px var(--glow-cyan), 0 0 20px var(--glow-cyan), 0 0 30px var(--glow-cyan);
+  }
+}
+
+.holographic-effect {
+  background: linear-gradient(
+    45deg,
+    var(--glow-cyan)/10,
+    var(--glow-green)/10,
+    var(--dark-green)/30,
+    var(--glow-cyan)/15
+  );
+  background-size: 400% 400%;
+  animation: holographic 4s ease-in-out infinite;
+}
+
+@keyframes holographic {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(90, 243, 242, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90, 243, 242, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.neon-text {
+  color: var(--pure-white);
+  text-shadow: 
+    0 0 5px var(--glow-cyan),
+    0 0 10px var(--glow-cyan),
+    0 0 15px var(--glow-cyan),
+    0 0 20px var(--glow-cyan);
+}
+
+.success-glow {
+  color: var(--glow-green);
+  text-shadow: 0 0 10px var(--glow-green), 0 0 20px var(--glow-green);
+}
